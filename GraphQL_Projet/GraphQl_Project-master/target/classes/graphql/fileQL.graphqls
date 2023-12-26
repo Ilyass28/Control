@@ -1,0 +1,30 @@
+
+
+type Mutation {
+  saveComputer(computer: ComputerInput): ComputerDTO
+  deleteComputer(id: ID): ComputerDTO
+}
+
+input ComputerInput {
+  proce: String
+  ram: String
+  hardDrive: String
+  price: Float
+  macAddress: String
+}
+
+type ComputerDTO {
+  id: ID
+  proce: String
+  ram: String
+  hardDrive: String
+  price: Float
+  macAddress: String
+}
+
+type Query {
+  getComputerByProce(proce: String): [ComputerDTO]
+  getComputerByPrice(price: Float): [ComputerDTO]
+}
+
+
